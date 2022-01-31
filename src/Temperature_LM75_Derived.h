@@ -79,6 +79,10 @@ public:
     return (int16_t)(value / temperature_frac_factor);
   }
 
+  int16_t readRawTemperature() {
+    return readIntegerTemperatureRegister(attributes->registers->temperature);
+  }
+
   float readTemperatureC() {
     return convertIntegerTemperature(readIntegerTemperatureRegister(attributes->registers->temperature));
   }
